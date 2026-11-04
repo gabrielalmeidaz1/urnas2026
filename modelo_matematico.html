@@ -3232,10 +3232,10 @@
                         <i class="fa-solid fa-list-check"></i> Microdados Oficiais TSE &bull; 100% Auditados
                     </div>
                     <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight">
-                        As 15.161 Urnas do Supercluster (34,64% da Região Norte)
+                        As 15.161 Urnas do Supercluster: Lista Completa com Porcentagens Oficiais
                     </h2>
                     <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-                        Navegue, pesquise e audite cada uma das <strong>15.161 seções eleitorais</strong> espalhadas por <strong>406 dos 450 municípios</strong> do Norte onde ocorreu a anomalia matemática: <strong>Flávio estagnado em 0% (faixa de -5% a +5%)</strong> enquanto <strong>Lula salta de +10% a +20%</strong>.
+                        Navegue, ordene por múltiplos critérios e audite cada uma das <strong>15.161 seções eleitorais</strong> espalhadas por <strong>406 dos 450 municípios</strong> do Norte onde ocorreu a anomalia: <strong>Flávio congelado em 0% de variação</strong> enquanto <strong>Lula saltava rigidamente entre +10% e +20%</strong>. A tabela exibe votos nominais, porcentagens válidas e divisão visual de cada urna.
                     </p>
                 </div>
             </section>
@@ -3291,38 +3291,47 @@
                 </div>
             </section>
 
-            <!-- BARRA DE CONTROLE, BUSCA E FILTROS -->
+            <!-- BARRA DE CONTROLE, ORDENAÇÃO E FILTROS -->
             <section class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-2xl space-y-4">
                 <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-800">
                     <div>
                         <h3 class="font-bold text-white text-lg flex items-center gap-2">
-                            <i class="fa-solid fa-filter text-amber-400"></i> Filtros e Busca Rápida
+                            <i class="fa-solid fa-arrow-down-wide-short text-amber-400"></i> Ordenação e Filtros Avançados
                         </h3>
-                        <p class="text-xs text-slate-400">Filtre por Estado, Cluster, Placar de Flávio ou digite o nome do município</p>
+                        <p class="text-xs text-slate-400">Ordene por qualquer indicador ou clique nos cabeçalhos da tabela</p>
                     </div>
                     <div class="flex items-center gap-2">
                         <a href="dados/urnas_supercluster_15161_2026.csv" download class="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold transition flex items-center gap-2 shadow-lg shadow-emerald-600/30">
-                            <i class="fa-solid fa-file-csv text-sm"></i> Baixar CSV (15.161 Urnas)
+                            <i class="fa-solid fa-file-csv text-sm"></i> Baixar CSV Completo
                         </a>
                         <a href="grafico_visual_2026.html" class="px-3.5 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs font-bold transition flex items-center gap-2 shadow-lg shadow-indigo-600/30">
-                            <i class="fa-solid fa-chart-pie text-sm"></i> Ver Gráfico Visual
+                            <i class="fa-solid fa-chart-pie text-sm"></i> Ver Gráfico 2D
                         </a>
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
-                    <!-- Busca Texto -->
-                    <div class="space-y-1">
-                        <label class="font-bold text-slate-300">Buscar Município / Seção:</label>
-                        <div class="relative">
-                            <input type="text" id="superSearchInput" oninput="onSuperFilterChange()" placeholder="Ex: Manaus, Pimenta Bueno, 24..." class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 font-mono text-xs">
-                            <i class="fa-solid fa-search absolute right-3 top-2.5 text-slate-500 text-xs"></i>
-                        </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 text-xs">
+                    <!-- Seletor de Ordenação Múltipla -->
+                    <div class="space-y-1 sm:col-span-2 lg:col-span-2">
+                        <label class="font-bold text-amber-300 flex items-center gap-1">
+                            <i class="fa-solid fa-sort"></i> Ordenar Lista Por:
+                        </label>
+                        <select id="superSortSelect" onchange="onSuperSortChange()" class="w-full bg-slate-950 border border-amber-500/50 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-amber-400 font-mono text-xs">
+                            <option value="DEFAULT">Ordem Padrão (UF / Município / Seção)</option>
+                            <option value="FL_FROZEN">❄️ Flávio Mais Congelado (|ΔFl| mais próximo de 0%)</option>
+                            <option value="LU_GROWTH_DESC">🚀 Maior Salto de Lula (% Crescimento 1T ➔ 2T)</option>
+                            <option value="LU_GROWTH_ASC">📉 Menor Salto de Lula (% Crescimento)</option>
+                            <option value="PCT_F2_DESC">🟦 Maior % Válidos Flávio 2T (Fortalezas de Flávio)</option>
+                            <option value="PCT_L2_DESC">🟩 Maior % Válidos Lula 2T (Fortalezas de Lula)</option>
+                            <option value="FL_QUEDA_DESC">🔻 Maior Queda Nominal de Flávio (Votos Perdidos)</option>
+                            <option value="TERC_DESC">🗳️ Maior Volume de 3ª Via 1T</option>
+                            <option value="TOT_DESC">👥 Maior Seção (Mais Votantes)</option>
+                        </select>
                     </div>
 
                     <!-- Filtro Estado -->
                     <div class="space-y-1">
-                        <label class="font-bold text-slate-300">Filtrar por Estado (UF):</label>
+                        <label class="font-bold text-slate-300">Estado (UF):</label>
                         <select id="superUfSelect" onchange="onSuperFilterChange()" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-amber-500 font-mono text-xs">
                             <option value="ALL">Todos os 7 Estados (15.161)</option>
                             <option value="RO">Rondônia - RO (1.848)</option>
@@ -3337,7 +3346,7 @@
 
                     <!-- Filtro Cluster -->
                     <div class="space-y-1">
-                        <label class="font-bold text-slate-300">Filtrar por Cluster:</label>
+                        <label class="font-bold text-slate-300">Tipo de Anomalia:</label>
                         <select id="superClusterSelect" onchange="onSuperFilterChange()" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-amber-500 font-mono text-xs">
                             <option value="ALL">Ambos os Clusters (15.161)</option>
                             <option value="1">Cluster 1: Flávio ~0% e Lula ~+10% (7.922)</option>
@@ -3346,23 +3355,32 @@
                         </select>
                     </div>
 
-                    <!-- Linhas por Página -->
+                    <!-- Busca Texto -->
                     <div class="space-y-1">
-                        <label class="font-bold text-slate-300">Urnas por Página:</label>
-                        <select id="superPageSize" onchange="onSuperPageSizeChange()" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-amber-500 font-mono text-xs">
-                            <option value="50">50 urnas por página</option>
-                            <option value="100" selected>100 urnas por página</option>
-                            <option value="250">250 urnas por página</option>
-                        </select>
+                        <label class="font-bold text-slate-300">Buscar Município / Seção:</label>
+                        <div class="relative">
+                            <input type="text" id="superSearchInput" oninput="onSuperFilterChange()" placeholder="Ex: Manaus, 24..." class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 font-mono text-xs">
+                            <i class="fa-solid fa-search absolute right-3 top-2.5 text-slate-500 text-xs"></i>
+                        </div>
                     </div>
                 </div>
 
-                <div class="flex items-center justify-between text-xs text-slate-400 font-mono pt-1">
+                <div class="flex flex-wrap items-center justify-between text-xs text-slate-400 font-mono pt-1 border-t border-slate-800/80 gap-2">
                     <div>
                         Encontradas: <strong id="superTotalCount" class="text-amber-300 font-bold">15.161</strong> urnas (<span id="superTotalPct">34,64%</span> do Norte)
                     </div>
-                    <div id="superPageInfo" class="text-slate-300">
-                        Página 1 de 152
+                    <div class="flex items-center gap-3">
+                        <div class="flex items-center gap-1.5">
+                            <span class="text-slate-400">Por página:</span>
+                            <select id="superPageSize" onchange="onSuperPageSizeChange()" class="bg-slate-950 border border-slate-700 rounded px-2 py-0.5 text-white font-mono text-xs">
+                                <option value="50">50</option>
+                                <option value="100" selected>100</option>
+                                <option value="250">250</option>
+                            </select>
+                        </div>
+                        <div id="superPageInfo" class="text-slate-300 font-bold">
+                            Página 1 de 152
+                        </div>
                     </div>
                 </div>
             </section>
@@ -3371,19 +3389,19 @@
             <section class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-2xl space-y-4">
                 <div class="overflow-x-auto">
                     <table class="w-full text-xs text-left">
-                        <thead class="bg-slate-950 text-slate-400 uppercase font-mono text-[10px] border-b border-slate-800">
+                        <thead class="bg-slate-950 text-slate-400 uppercase font-mono text-[10px] border-b border-slate-800 select-none">
                             <tr>
-                                <th class="py-2.5 px-2 text-center">UF</th>
-                                <th class="py-2.5 px-3">Município</th>
-                                <th class="py-2.5 px-2 text-center">Zona</th>
-                                <th class="py-2.5 px-2 text-center">Seção</th>
-                                <th class="py-2.5 px-2 text-right">Flávio 1T</th>
-                                <th class="py-2.5 px-2 text-right">Flávio 2T</th>
-                                <th class="py-2.5 px-2 text-right">&Delta; Flávio</th>
-                                <th class="py-2.5 px-2 text-right">Lula 1T</th>
-                                <th class="py-2.5 px-2 text-right">Lula 2T</th>
-                                <th class="py-2.5 px-2 text-right">&Delta; Lula</th>
-                                <th class="py-2.5 px-2 text-right">3ª Via</th>
+                                <th onclick="onHeaderSort('uf')" class="py-2.5 px-2 text-center cursor-pointer hover:text-white transition">UF <i id="sortIcon_uf" class="fa-solid fa-sort ml-0.5"></i></th>
+                                <th onclick="onHeaderSort('mun')" class="py-2.5 px-3 cursor-pointer hover:text-white transition">Município <i id="sortIcon_mun" class="fa-solid fa-sort ml-0.5"></i></th>
+                                <th onclick="onHeaderSort('secao')" class="py-2.5 px-2 text-center cursor-pointer hover:text-white transition">Z / Sec <i id="sortIcon_secao" class="fa-solid fa-sort ml-0.5"></i></th>
+                                <th onclick="onHeaderSort('fl2')" class="py-2.5 px-2 text-right cursor-pointer hover:text-white transition">Votos Flávio <i id="sortIcon_fl2" class="fa-solid fa-sort ml-0.5"></i></th>
+                                <th onclick="onHeaderSort('pct_f2')" class="py-2.5 px-2 text-center cursor-pointer hover:text-blue-300 transition text-blue-400 font-bold">% Flávio 1T ➔ 2T <i id="sortIcon_pct_f2" class="fa-solid fa-sort ml-0.5"></i></th>
+                                <th onclick="onHeaderSort('d_fl')" class="py-2.5 px-2 text-right cursor-pointer hover:text-amber-300 transition text-amber-400 font-bold">&Delta; Flávio (%) <i id="sortIcon_d_fl" class="fa-solid fa-sort ml-0.5"></i></th>
+                                <th onclick="onHeaderSort('lu2')" class="py-2.5 px-2 text-right cursor-pointer hover:text-white transition">Votos Lula <i id="sortIcon_lu2" class="fa-solid fa-sort ml-0.5"></i></th>
+                                <th onclick="onHeaderSort('pct_l2')" class="py-2.5 px-2 text-center cursor-pointer hover:text-emerald-300 transition text-emerald-400 font-bold">% Lula 1T ➔ 2T <i id="sortIcon_pct_l2" class="fa-solid fa-sort ml-0.5"></i></th>
+                                <th onclick="onHeaderSort('cresc_lu')" class="py-2.5 px-2 text-right cursor-pointer hover:text-emerald-300 transition text-emerald-400 font-bold">&Delta; Lula (%) <i id="sortIcon_cresc_lu" class="fa-solid fa-sort ml-0.5"></i></th>
+                                <th class="py-2.5 px-2 text-center">Divisão 2T</th>
+                                <th onclick="onHeaderSort('terc1')" class="py-2.5 px-2 text-right cursor-pointer hover:text-white transition">3ª Via <i id="sortIcon_terc1" class="fa-solid fa-sort ml-0.5"></i></th>
                                 <th class="py-2.5 px-2 text-center">Cluster</th>
                             </tr>
                         </thead>
@@ -3416,22 +3434,23 @@
             </section>
 
         </div>
-
     </main>
 
     <!-- Dataset das 15.161 Urnas do Supercluster -->
     <script src="dados/supercluster_data.js"></script>
     <script>
-        // Lógica de Paginação e Filtragem das 15.161 Urnas da Aba 5
+        // Lógica de Paginação, Ordenação Múltipla e Filtragem das 15.161 Urnas da Aba 5
         let superAllData = [];
         let superFilteredData = [];
         let superCurrentPage = 1;
         let superPageSize = 100;
+        let currentSortField = 'DEFAULT';
+        let currentSortAsc = true;
 
         function initSuperclusterTable() {
             if (window.SUPERCLUSTER_URNAS && Array.isArray(window.SUPERCLUSTER_URNAS)) {
                 superAllData = window.SUPERCLUSTER_URNAS;
-                superFilteredData = superAllData;
+                superFilteredData = superAllData.slice();
                 renderSuperclusterPage();
             } else {
                 console.warn("supercluster_data.js ainda não disponível.");
@@ -3444,11 +3463,11 @@
             const clusterFilter = document.getElementById('superClusterSelect').value;
 
             superFilteredData = superAllData.filter(row => {
-                // row: [uf, mun, zona, secao, fl1, fl2, d_fl, d_fl_pct, lu1, lu2, d_lu, d_lu_pct, terc1, tot1, tot2, clust]
+                // row: [0:uf, 1:mun, 2:zona, 3:secao, 4:fl1, 5:fl2, 6:d_fl, 7:cresc_fl_pct, 8:pct_f1, 9:pct_f2, 10:lu1, 11:lu2, 12:d_lu, 13:cresc_lu_pct, 14:pct_l1, 15:pct_l2, 16:terc1, 17:tot1, 18:tot2, 19:clust]
                 if (uf !== 'ALL' && row[0] !== uf) return false;
 
-                if (clusterFilter === '1' && row[15] !== 1) return false;
-                if (clusterFilter === '2' && row[15] !== 2) return false;
+                if (clusterFilter === '1' && row[19] !== 1) return false;
+                if (clusterFilter === '2' && row[19] !== 2) return false;
                 if (clusterFilter === 'ZERO' && row[6] !== 0) return false;
 
                 if (query) {
@@ -3462,8 +3481,81 @@
                 return true;
             });
 
+            applyCurrentSort();
             superCurrentPage = 1;
             renderSuperclusterPage();
+        }
+
+        function onSuperSortChange() {
+            const sortMode = document.getElementById('superSortSelect').value;
+            currentSortField = sortMode;
+            applyCurrentSort();
+            superCurrentPage = 1;
+            renderSuperclusterPage();
+        }
+
+        function onHeaderSort(fieldKey) {
+            if (currentSortField === fieldKey) {
+                currentSortAsc = !currentSortAsc;
+            } else {
+                currentSortField = fieldKey;
+                currentSortAsc = false; // default desc for metric headers
+            }
+
+            // Atualiza ícones
+            document.querySelectorAll('thead th i').forEach(el => el.className = 'fa-solid fa-sort ml-0.5 text-slate-600');
+            const iconEl = document.getElementById('sortIcon_' + fieldKey);
+            if (iconEl) {
+                iconEl.className = currentSortAsc ? 'fa-solid fa-sort-up ml-0.5 text-amber-400' : 'fa-solid fa-sort-down ml-0.5 text-amber-400';
+            }
+
+            applyHeaderSort(fieldKey, currentSortAsc);
+            superCurrentPage = 1;
+            renderSuperclusterPage();
+        }
+
+        function applyCurrentSort() {
+            const mode = currentSortField;
+            if (mode === 'DEFAULT') {
+                superFilteredData.sort((a, b) => (a[0] + a[1] + String(a[2]).padStart(4, '0') + String(a[3]).padStart(4, '0')).localeCompare(b[0] + b[1] + String(b[2]).padStart(4, '0') + String(b[3]).padStart(4, '0')));
+            } else if (mode === 'FL_FROZEN') {
+                // Mais congelado: menor valor absoluto de cresc_fl_pct
+                superFilteredData.sort((a, b) => Math.abs(a[7]) - Math.abs(b[7]) || Math.abs(a[6]) - Math.abs(b[6]));
+            } else if (mode === 'LU_GROWTH_DESC') {
+                superFilteredData.sort((a, b) => b[13] - a[13]);
+            } else if (mode === 'LU_GROWTH_ASC') {
+                superFilteredData.sort((a, b) => a[13] - b[13]);
+            } else if (mode === 'PCT_F2_DESC') {
+                superFilteredData.sort((a, b) => b[9] - a[9]);
+            } else if (mode === 'PCT_L2_DESC') {
+                superFilteredData.sort((a, b) => b[15] - a[15]);
+            } else if (mode === 'FL_QUEDA_DESC') {
+                superFilteredData.sort((a, b) => a[6] - b[6]); // mais negativo primeiro
+            } else if (mode === 'TERC_DESC') {
+                superFilteredData.sort((a, b) => b[16] - a[16]);
+            } else if (mode === 'TOT_DESC') {
+                superFilteredData.sort((a, b) => b[18] - a[18]);
+            }
+        }
+
+        function applyHeaderSort(key, asc) {
+            const sign = asc ? 1 : -1;
+            // row: [0:uf, 1:mun, 2:zona, 3:secao, 4:fl1, 5:fl2, 6:d_fl, 7:cresc_fl_pct, 8:pct_f1, 9:pct_f2, 10:lu1, 11:lu2, 12:d_lu, 13:cresc_lu_pct, 14:pct_l1, 15:pct_l2, 16:terc1, 17:tot1, 18:tot2, 19:clust]
+            const indexMap = {
+                'uf': 0, 'mun': 1, 'secao': 3,
+                'fl2': 5, 'pct_f2': 9, 'd_fl': 6,
+                'lu2': 11, 'pct_l2': 15, 'cresc_lu': 13,
+                'terc1': 16
+            };
+            const idx = indexMap[key];
+            if (idx === undefined) return;
+
+            superFilteredData.sort((a, b) => {
+                if (typeof a[idx] === 'string') {
+                    return sign * a[idx].localeCompare(b[idx]);
+                }
+                return sign * (a[idx] - b[idx]);
+            });
         }
 
         function onSuperPageSizeChange() {
@@ -3505,25 +3597,55 @@
             let html = '';
             for (let i = 0; i < pageRows.length; i++) {
                 const r = pageRows[i];
-                // r: [uf, mun, zona, secao, fl1, fl2, d_fl, d_fl_pct, lu1, lu2, d_lu, d_lu_pct, terc1, tot1, tot2, clust]
-                const dFlClass = r[6] === 0 ? 'text-amber-300 font-bold' : (r[6] < 0 ? 'text-rose-400' : 'text-blue-300');
-                const clusterBadge = r[15] === 1 
-                    ? '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">Cluster 1 (+10%)</span>'
-                    : '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-orange-500/20 text-orange-300 border border-orange-500/30">Cluster 2 (+20%)</span>';
+                // r: [0:uf, 1:mun, 2:zona, 3:secao, 4:fl1, 5:fl2, 6:d_fl, 7:cresc_fl_pct, 8:pct_f1, 9:pct_f2, 10:lu1, 11:lu2, 12:d_lu, 13:cresc_lu_pct, 14:pct_l1, 15:pct_l2, 16:terc1, 17:tot1, 18:tot2, 19:clust]
+                
+                // Δ Flávio badge
+                let dFlBadge = '';
+                if (r[6] === 0) {
+                    dFlBadge = '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40">0 (0,0%)</span>';
+                } else if (r[6] < 0) {
+                    dFlBadge = `<span class="text-rose-400 font-bold">${r[6]} (${r[7]}%)</span>`;
+                } else {
+                    dFlBadge = `<span class="text-blue-300 font-bold">+${r[6]} (+${r[7]}%)</span>`;
+                }
+
+                // Mini progress split bar 2T (Flávio vs Lula)
+                const fBarPct = r[9]; // pct_f2
+                const lBarPct = r[15]; // pct_l2
+
+                const clusterBadge = r[19] === 1 
+                    ? '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 whitespace-nowrap">Cluster 1 (+10%)</span>'
+                    : '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-orange-500/20 text-orange-300 border border-orange-500/30 whitespace-nowrap">Cluster 2 (+20%)</span>';
 
                 html += `<tr class="hover:bg-slate-800/40 border-b border-slate-800/70 transition">
-                    <td class="py-2.5 px-2 text-center font-bold text-cyan-400">${r[0]}</td>
-                    <td class="py-2.5 px-3 font-sans font-medium text-slate-200">${r[1]}</td>
-                    <td class="py-2.5 px-2 text-center text-slate-400">${r[2]}</td>
-                    <td class="py-2.5 px-2 text-center font-bold text-white">${r[3]}</td>
-                    <td class="py-2.5 px-2 text-right text-slate-300">${r[4]}</td>
-                    <td class="py-2.5 px-2 text-right font-bold text-blue-300">${r[5]}</td>
-                    <td class="py-2.5 px-2 text-right ${dFlClass}">${r[6] >= 0 ? '+' : ''}${r[6]} (${r[7] >= 0 ? '+' : ''}${r[7]}%)</td>
-                    <td class="py-2.5 px-2 text-right text-slate-300">${r[8]}</td>
-                    <td class="py-2.5 px-2 text-right font-bold text-emerald-300">${r[9]}</td>
-                    <td class="py-2.5 px-2 text-right text-emerald-400 font-bold">+${r[10]} (+${r[11]}%)</td>
-                    <td class="py-2.5 px-2 text-right text-amber-400">${r[12]}</td>
-                    <td class="py-2.5 px-2 text-center">${clusterBadge}</td>
+                    <td class="py-2 px-2 text-center font-bold text-cyan-400">${r[0]}</td>
+                    <td class="py-2 px-3 font-sans font-medium text-slate-200">${r[1]}</td>
+                    <td class="py-2 px-2 text-center text-slate-400 font-mono">${r[2]} / <strong class="text-white">${r[3]}</strong></td>
+                    
+                    <!-- Flávio Votos & % -->
+                    <td class="py-2 px-2 text-right text-slate-300 font-mono">${r[4]} ➔ <strong class="text-blue-300">${r[5]}</strong></td>
+                    <td class="py-2 px-2 text-center font-mono">
+                        <span class="px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-300 border border-blue-500/20 font-bold text-[11px]">${r[8]}% ➔ ${r[9]}%</span>
+                    </td>
+                    <td class="py-2 px-2 text-right font-mono">${dFlBadge}</td>
+
+                    <!-- Lula Votos & % -->
+                    <td class="py-2 px-2 text-right text-slate-300 font-mono">${r[10]} ➔ <strong class="text-emerald-300">${r[11]}</strong></td>
+                    <td class="py-2 px-2 text-center font-mono">
+                        <span class="px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 font-bold text-[11px]">${r[14]}% ➔ ${r[15]}%</span>
+                    </td>
+                    <td class="py-2 px-2 text-right text-emerald-400 font-bold font-mono">+${r[12]} (+${r[13]}%)</td>
+
+                    <!-- Mini Split Bar 2T -->
+                    <td class="py-2 px-2 text-center">
+                        <div class="w-16 h-2 rounded-full overflow-hidden flex bg-slate-800 mx-auto" title="Flávio: ${fBarPct}% | Lula: ${lBarPct}%">
+                            <div style="width: ${fBarPct}%" class="bg-blue-500 h-full"></div>
+                            <div style="width: ${lBarPct}%" class="bg-emerald-500 h-full"></div>
+                        </div>
+                    </td>
+
+                    <td class="py-2 px-2 text-right text-amber-400 font-mono">${r[16]}</td>
+                    <td class="py-2 px-2 text-center">${clusterBadge}</td>
                 </tr>`;
             }
             tbody.innerHTML = html;
@@ -3588,21 +3710,16 @@
             });
         };
 
-        
         window.addEventListener('DOMContentLoaded', () => {
             if (window.location.hash === '#aba5' || window.location.hash === '#tab5') {
                 setTimeout(() => switchTab('tab5'), 50);
             } else if (window.location.hash === '#aba4' || window.location.hash === '#tab4') {
                 setTimeout(() => switchTab('tab4'), 50);
             }
-        });
-
-        window.addEventListener('DOMContentLoaded', () => {
             if (window.SUPERCLUSTER_URNAS) {
                 initSuperclusterTable();
             }
         });
     </script>
-
 </body>
 </html>

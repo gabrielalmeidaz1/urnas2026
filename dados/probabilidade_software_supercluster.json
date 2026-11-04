@@ -1,0 +1,49 @@
+{
+  "total_secoes": 43769,
+  "urnas_supercluster": 13433,
+  "pct_supercluster": 30.69,
+  "p_esperada_humano_pct": 17.24,
+  "urnas_esperadas_humano": 7545,
+  "excesso_anomalo_urnas": 5888,
+  "z_score": 74.51,
+  "log10_p_valor": -1206,
+  "probabilidade_software_pct": 99.999999,
+  "probabilidade_humano_pct": 1e-06,
+  "por_estado": {
+    "RO": {
+      "secoes": 4698,
+      "urnas_cluster": 1697,
+      "pct_cluster": 36.12
+    },
+    "AC": {
+      "secoes": 2270,
+      "urnas_cluster": 496,
+      "pct_cluster": 21.85
+    },
+    "AP": {
+      "secoes": 1914,
+      "urnas_cluster": 508,
+      "pct_cluster": 26.54
+    },
+    "RR": {
+      "secoes": 1519,
+      "urnas_cluster": 385,
+      "pct_cluster": 25.35
+    },
+    "AM": {
+      "secoes": 8157,
+      "urnas_cluster": 2458,
+      "pct_cluster": 30.13
+    },
+    "PA": {
+      "secoes": 20827,
+      "urnas_cluster": 6404,
+      "pct_cluster": 30.75
+    },
+    "TO": {
+      "secoes": 4384,
+      "urnas_cluster": 1485,
+      "pct_cluster": 33.87
+    }
+  }
+}

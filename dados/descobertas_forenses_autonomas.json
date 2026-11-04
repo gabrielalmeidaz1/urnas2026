@@ -1,0 +1,161 @@
+{
+  "total_secoes": 43769,
+  "anomalia_1_absorcao_impossivel": {
+    "total_urnas": 6038,
+    "pct_urnas": 13.8,
+    "votos_subtraidos_minimo": 32390,
+    "por_estado": {
+      "RO": {
+        "urnas": 278,
+        "pct": 5.92,
+        "votos_subtraidos_minimo": 927
+      },
+      "AC": {
+        "urnas": 113,
+        "pct": 4.98,
+        "votos_subtraidos_minimo": 449
+      },
+      "AP": {
+        "urnas": 45,
+        "pct": 2.35,
+        "votos_subtraidos_minimo": 126
+      },
+      "RR": {
+        "urnas": 113,
+        "pct": 7.44,
+        "votos_subtraidos_minimo": 461
+      },
+      "AM": {
+        "urnas": 991,
+        "pct": 12.15,
+        "votos_subtraidos_minimo": 4471
+      },
+      "PA": {
+        "urnas": 3933,
+        "pct": 18.88,
+        "votos_subtraidos_minimo": 23746
+      },
+      "TO": {
+        "urnas": 565,
+        "pct": 12.89,
+        "votos_subtraidos_minimo": 2210
+      }
+    }
+  },
+  "anomalia_2_contra_evasao": {
+    "total_urnas": 1891,
+    "pct_urnas": 4.32,
+    "novos_votantes": 7993,
+    "queda_flavio": -7021,
+    "crescimento_lula": 37686
+  },
+  "anomalia_3_benford": {
+    "chi2_lula_1t": 13230.83,
+    "chi2_lula_2t": 18245.33,
+    "mad_lula_1t_pct": 5.622,
+    "mad_lula_2t_pct": 6.483,
+    "chi2_flavio_1t": 29527.25,
+    "chi2_flavio_2t": 27040.79,
+    "mad_flavio_1t_pct": 8.322,
+    "mad_flavio_2t_pct": 7.896
+  },
+  "anomalia_4_klimek": {
+    "correlacao_turnout_lula": 0.025,
+    "correlacao_turnout_flavio": -0.025,
+    "tabela_faixas": [
+      {
+        "turnout_bracket": "<60%",
+        "secoes": 590,
+        "media_pct_lu": 55.309242693444546,
+        "media_pct_fl": 44.690757306555454,
+        "delta_lu_medio": -10.189830508474577,
+        "delta_fl_medio": -18.277966101694915
+      },
+      {
+        "turnout_bracket": "60-70%",
+        "secoes": 3566,
+        "media_pct_lu": 53.251074846463126,
+        "media_pct_fl": 46.748925153536874,
+        "delta_lu_medio": 0.7708917554683118,
+        "delta_fl_medio": -8.211441390914189
+      },
+      {
+        "turnout_bracket": "70-75%",
+        "secoes": 6499,
+        "media_pct_lu": 49.82440582089105,
+        "media_pct_fl": 50.17559417910895,
+        "delta_lu_medio": 6.738575165410063,
+        "delta_fl_medio": -3.063855977842745
+      },
+      {
+        "turnout_bracket": "75-80%",
+        "secoes": 13084,
+        "media_pct_lu": 47.74717194840093,
+        "media_pct_fl": 52.25282805159907,
+        "delta_lu_medio": 10.458804646896974,
+        "delta_fl_medio": 0.4106542341791501
+      },
+      {
+        "turnout_bracket": "80-85%",
+        "secoes": 13934,
+        "media_pct_lu": 48.93375002393306,
+        "media_pct_fl": 51.06624997606694,
+        "delta_lu_medio": 14.239916750394718,
+        "delta_fl_medio": 3.0507391990813835
+      },
+      {
+        "turnout_bracket": "85-90%",
+        "secoes": 5423,
+        "media_pct_lu": 53.990958129562394,
+        "media_pct_fl": 46.0090418704376,
+        "delta_lu_medio": 16.63396643924027,
+        "delta_fl_medio": 4.4582334501198595
+      },
+      {
+        "turnout_bracket": ">90%",
+        "secoes": 673,
+        "media_pct_lu": 68.69418482274368,
+        "media_pct_fl": 31.305815177256324,
+        "delta_lu_medio": 11.924219910846954,
+        "delta_fl_medio": 3.014858841010401
+      }
+    ]
+  },
+  "anomalia_5_ultimo_digito": {
+    "lula": {
+      "0": 10.01,
+      "1": 10.05,
+      "2": 10.14,
+      "3": 9.86,
+      "4": 9.97,
+      "5": 10.02,
+      "6": 10.06,
+      "7": 9.9,
+      "8": 9.9,
+      "9": 10.08
+    },
+    "flavio": {
+      "0": 9.77,
+      "1": 9.98,
+      "2": 9.95,
+      "3": 10.02,
+      "4": 10.16,
+      "5": 10.23,
+      "6": 9.99,
+      "7": 10.1,
+      "8": 9.97,
+      "9": 9.84
+    }
+  },
+  "anomalia_6_clones": {
+    "total_urnas_clonadas": 1199,
+    "grupos": 366
+  },
+  "anomalia_7_super_lula": {
+    "total_urnas": 1701,
+    "pct_urnas": 3.89,
+    "votos_lula": 303396,
+    "votos_flavio": 27711,
+    "media_lula_pct": 91.61
+  }
+}

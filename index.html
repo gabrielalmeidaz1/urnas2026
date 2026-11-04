@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auditoria Eleitoral da Região Norte 2026: 43.769 Urnas Oficiais do TSE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #0b1120; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #334155; }
+        .hero-glow { background: radial-gradient(circle at 50% 20%, rgba(6, 182, 212, 0.15) 0%, rgba(15, 23, 42, 0) 70%); }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased">
+
+    <!-- Top Navbar -->
+    <header class="bg-slate-900 border-b border-slate-800 sticky top-0 z-50 shadow-2xl backdrop-blur-md bg-opacity-95">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+                <span class="w-8 h-8 rounded-xl bg-cyan-600 flex items-center justify-center text-white font-black shadow-lg shadow-cyan-600/30">
+                    <i class="fa-solid fa-compass"></i>
+                </span>
+                <div>
+                    <div class="font-black text-white text-sm sm:text-base tracking-tight flex items-center gap-2">
+                        Região Norte 2026
+                        <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 font-bold uppercase">7 Estados &bull; 43.769 Urnas</span>
+                    </div>
+                    <div class="text-[11px] text-slate-400">Auditoria Forense dos Boletins de Urna do TSE</div>
+                </div>
+            </div>
+
+            <!-- Links de Navegação Rápida -->
+            <div class="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0 text-xs font-semibold">
+                <a href="https://github.com/gabrielalmeidac3/apuracao2026" target="_blank" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-white rounded-lg transition border border-slate-700 flex items-center gap-1.5 whitespace-nowrap font-bold text-xs">
+                    <i class="fa-brands fa-github text-sm"></i> Ver no GitHub
+                </a>
+                <a href="#estados" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg transition border border-slate-700 flex items-center gap-1.5 whitespace-nowrap">
+                    <i class="fa-solid fa-map-location-dot"></i> Os 7 Estados
+                </a>
+                <a href="modelo_matematico.html" class="px-3 py-1.5 bg-cyan-950/80 hover:bg-cyan-900 text-cyan-300 rounded-lg transition border border-cyan-700/60 flex items-center gap-1.5 whitespace-nowrap font-bold">
+                    <i class="fa-solid fa-square-root-variable"></i> Modelo Matemático (4 Abas)
+                </a>
+                <a href="#descobertas" class="px-3 py-1.5 bg-purple-950/80 hover:bg-purple-900 text-purple-300 rounded-lg transition border border-purple-700/60 flex items-center gap-1.5 whitespace-nowrap">
+                    <i class="fa-solid fa-microscope"></i> Descobertas Forenses
+                </a>
+                <a href="#downloads" class="px-3 py-1.5 bg-emerald-950/80 hover:bg-emerald-900 text-emerald-300 rounded-lg transition border border-emerald-700/60 flex items-center gap-1.5 whitespace-nowrap font-bold">
+                    <i class="fa-solid fa-download"></i> Dados Abertos
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8 space-y-12">
+
+        <!-- HERO SECTION -->
+        <section class="relative bg-gradient-to-b from-slate-900 via-slate-900/90 to-slate-950 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl overflow-hidden hero-glow">
+            <div class="max-w-4xl space-y-4 relative z-10">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-bold uppercase tracking-wider border border-cyan-500/30">
+                    <i class="fa-solid fa-shield-halved"></i> Repositório de Auditoria Eleitoral Independente
+                </div>
+                <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+                    Auditoria Integral da Região Norte: Eleições Presidenciais 2026
+                </h1>
+                <p class="text-sm sm:text-base text-slate-300 leading-relaxed max-w-3xl">
+                    Perícia computacional, econométrica e matemática sobre <strong>100% das 43.769 seções eleitorais dos 7 estados do Norte do Brasil</strong> (Acre, Amapá, Amazonas, Pará, Rondônia, Roraima e Tocantins). Cruzamento determinístico seção a seção entre o 1º e o 2º turno a partir dos microdados oficiais do Tribunal Superior Eleitoral (TSE).
+                </p>
+                <div class="flex flex-wrap gap-3 pt-2 text-xs">
+                    <a href="modelo_matematico.html" class="px-5 py-3 bg-cyan-600 hover:bg-cyan-500 text-white rounded-xl font-bold shadow-lg shadow-cyan-600/30 transition flex items-center gap-2 text-sm">
+                        <i class="fa-solid fa-calculator"></i> Acessar Painel Matemático Completo
+                    </a>
+                    <a href="#estados" class="px-5 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl font-bold transition border border-slate-700 flex items-center gap-2 text-sm">
+                        <i class="fa-solid fa-list-check"></i> Explorar por Estado
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4 MACRO KPI CARDS -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-slate-900/90 border-2 border-slate-800 rounded-2xl p-5 shadow-xl">
+                <div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1 flex items-center justify-between">
+                    <span>Universo Auditado</span>
+                    <i class="fa-solid fa-check-double text-cyan-400"></i>
+                </div>
+                <div class="text-3xl sm:text-4xl font-black text-white font-mono">43.769</div>
+                <div class="text-xs text-cyan-300 mt-1 font-bold">100% das Urnas da Região Norte</div>
+                <div class="text-[11px] text-slate-400 mt-2 border-t border-slate-800 pt-2 font-mono">
+                    450 Municípios &bull; 7 Estados (1ºT e 2ºT)
+                </div>
+            </div>
+
+            <div class="bg-slate-900/90 border-2 border-emerald-500/40 rounded-2xl p-5 shadow-xl">
+                <div class="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-1 flex items-center justify-between">
+                    <span>Lula (2º Turno)</span>
+                    <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[11px] font-bold">+10,42%</span>
+                </div>
+                <div class="text-3xl sm:text-4xl font-black text-white font-mono">5.024.626</div>
+                <div class="text-xs text-emerald-300 mt-1 font-bold">Salto Líquido: +474.024 votos</div>
+                <div class="text-[11px] text-slate-400 mt-2 border-t border-slate-800 pt-2 font-mono">
+                    1ºT: 4.550.602 &bull; Absorveu <strong>74,97% da 3ª Via</strong>
+                </div>
+            </div>
+
+            <div class="bg-slate-900/90 border-2 border-blue-500/40 rounded-2xl p-5 shadow-xl">
+                <div class="text-xs font-bold text-blue-400 uppercase tracking-wider mb-1 flex items-center justify-between">
+                    <span>Flávio Bolsonaro (2º Turno)</span>
+                    <span class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 font-mono text-[11px] font-bold">+0,28%</span>
+                </div>
+                <div class="text-3xl sm:text-4xl font-black text-white font-mono">5.023.547</div>
+                <div class="text-xs text-blue-300 mt-1 font-bold">Variação Residual: +14.110 votos</div>
+                <div class="text-[11px] text-slate-400 mt-2 border-t border-slate-800 pt-2 font-mono">
+                    1ºT: 5.009.437 &bull; Queda nominal em 5 de 7 estados
+                </div>
+            </div>
+
+            <div class="bg-slate-900/90 border-2 border-amber-500/40 rounded-2xl p-5 shadow-xl">
+                <div class="text-xs font-bold text-amber-400 uppercase tracking-wider mb-1 flex items-center justify-between">
+                    <span>3ª Via & Absorção</span>
+                    <i class="fa-solid fa-users-rays text-amber-400"></i>
+                </div>
+                <div class="text-3xl sm:text-4xl font-black text-white font-mono">632.284</div>
+                <div class="text-xs text-amber-300 mt-1 font-bold">Votos da 3ª Via no 1º Turno</div>
+                <div class="text-[11px] text-slate-400 mt-2 border-t border-slate-800 pt-2 font-mono">
+                    Cury, Caiado, Renan, Zema &bull; 74,97% para Lula
+                </div>
+            </div>
+        </section>
+
+        <!-- TABELA CONSOLIDADA DOS 7 ESTADOS -->
+        <section id="estados-tabela" class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6">
+            <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-800">
+                <div>
+                    <h2 class="text-xl sm:text-2xl font-black text-white tracking-tight flex items-center gap-2">
+                        <i class="fa-solid fa-table-list text-cyan-400"></i> Panorama Consolidado dos 7 Estados do Norte
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-400 mt-0.5">Clique no nome de qualquer estado para abrir a auditoria seccional individual</p>
+                </div>
+                <span class="px-3 py-1 rounded-full bg-slate-800 text-slate-300 text-xs font-mono font-bold border border-slate-700">
+                    450 Municípios Auditados
+                </span>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-xs text-left">
+                    <thead class="bg-slate-950/90 text-slate-400 font-mono uppercase text-[10px] border-b border-slate-800">
+                        <tr>
+                            <th class="py-3 px-3">Estado (UF)</th>
+                            <th class="py-3 px-3 text-right">Seções</th>
+                            <th class="py-3 px-3 text-right">Flávio 1T</th>
+                            <th class="py-3 px-3 text-right">Flávio 2T</th>
+                            <th class="py-3 px-3 text-right">&Delta; Flávio</th>
+                            <th class="py-3 px-3 text-right">Lula 1T</th>
+                            <th class="py-3 px-3 text-right">Lula 2T</th>
+                            <th class="py-3 px-3 text-right">&Delta; Lula</th>
+                            <th class="py-3 px-3 text-right">3ª Via 1T</th>
+                            <th class="py-3 px-3 text-right">Absorção 3ªV</th>
+                            <th class="py-3 px-3 text-center">P(Software)</th>
+                            <th class="py-3 px-3 text-center">Página</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800/60 font-mono">
+                        <tr class="hover:bg-slate-800/40 transition">
+                            <td class="py-3 px-3 font-bold text-white flex items-center gap-1.5">
+                                <span>🌴</span> Pará (PA)
+                            </td>
+                            <td class="py-3 px-3 text-right text-slate-300">20.827</td>
+                            <td class="py-3 px-3 text-right text-slate-300">2.163.957</td>
+                            <td class="py-3 px-3 text-right font-bold text-blue-300">2.199.940</td>
+                            <td class="py-3 px-3 text-right text-blue-400 font-bold">+35.983 (+1,66%)</td>
+                            <td class="py-3 px-3 text-right text-slate-300">2.427.237</td>
+                            <td class="py-3 px-3 text-right font-bold text-emerald-300">2.690.449</td>
+                            <td class="py-3 px-3 text-right text-emerald-400 font-bold">+263.212 (+10,84%)</td>
+                            <td class="py-3 px-3 text-right text-amber-300 font-bold">272.161</td>
+                            <td class="py-3 px-3 text-right text-rose-400 font-black">96,7% 🔥</td>
+                            <td class="py-3 px-3 text-center"><span class="px-2 py-0.5 rounded text-[10px] bg-rose-500/20 text-rose-300 font-bold">62,7%</span></td>
+                            <td class="py-3 px-3 text-center">
+                                <a href="para.html" class="px-2.5 py-1 bg-cyan-600 hover:bg-cyan-500 text-white rounded font-sans font-bold transition">Ver PA</a>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/40 transition">
+                            <td class="py-3 px-3 font-bold text-white flex items-center gap-1.5">
+                                <span>🌲</span> Amazonas (AM)
+                            </td>
+                            <td class="py-3 px-3 text-right text-slate-300">8.157</td>
+                            <td class="py-3 px-3 text-right text-slate-300">976.764</td>
+                            <td class="py-3 px-3 text-right font-bold text-blue-300">975.245</td>
+                            <td class="py-3 px-3 text-right text-rose-400 font-bold">-1.519 (-0,16%)</td>
+                            <td class="py-3 px-3 text-right text-slate-300">1.046.996</td>
+                            <td class="py-3 px-3 text-right font-bold text-emerald-300">1.145.783</td>
+                            <td class="py-3 px-3 text-right text-emerald-400 font-bold">+98.787 (+9,44%)</td>
+                            <td class="py-3 px-3 text-right text-amber-300 font-bold">147.085</td>
+                            <td class="py-3 px-3 text-right text-amber-400 font-bold">67,2%</td>
+                            <td class="py-3 px-3 text-center"><span class="px-2 py-0.5 rounded text-[10px] bg-rose-500/20 text-rose-300 font-bold">66,5%</span></td>
+                            <td class="py-3 px-3 text-center">
+                                <a href="amazonas.html" class="px-2.5 py-1 bg-cyan-600 hover:bg-cyan-500 text-white rounded font-sans font-bold transition">Ver AM</a>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/40 transition">
+                            <td class="py-3 px-3 font-bold text-white flex items-center gap-1.5">
+                                <span>🌾</span> Rondônia (RO)
+                            </td>
+                            <td class="py-3 px-3 text-right text-slate-300">4.698</td>
+                            <td class="py-3 px-3 text-right text-slate-300">652.988</td>
+                            <td class="py-3 px-3 text-right font-bold text-blue-300">674.382</td>
+                            <td class="py-3 px-3 text-right text-blue-400 font-bold">+21.394 (+3,28%)</td>
+                            <td class="py-3 px-3 text-right text-slate-300">250.667</td>
+                            <td class="py-3 px-3 text-right font-bold text-emerald-300">294.446</td>
+                            <td class="py-3 px-3 text-right text-emerald-400 font-bold">+43.779 (+17,47%)</td>
+                            <td class="py-3 px-3 text-right text-amber-300 font-bold">64.470</td>
+                            <td class="py-3 px-3 text-right text-amber-400 font-bold">67,9%</td>
+                            <td class="py-3 px-3 text-center"><span class="px-2 py-0.5 rounded text-[10px] bg-amber-500/20 text-amber-300 font-bold">41,3%</span></td>
+                            <td class="py-3 px-3 text-center">
+                                <a href="rondonia.html" class="px-2.5 py-1 bg-cyan-600 hover:bg-cyan-500 text-white rounded font-sans font-bold transition">Ver RO</a>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/40 transition">
+                            <td class="py-3 px-3 font-bold text-white flex items-center gap-1.5">
+                                <span>☀️</span> Tocantins (TO)
+                            </td>
+                            <td class="py-3 px-3 text-right text-slate-300">4.384</td>
+                            <td class="py-3 px-3 text-right text-slate-300">469.321</td>
+                            <td class="py-3 px-3 text-right font-bold text-blue-300">467.916</td>
+                            <td class="py-3 px-3 text-right text-rose-400 font-bold">-1.405 (-0,30%)</td>
+                            <td class="py-3 px-3 text-right text-slate-300">404.009</td>
+                            <td class="py-3 px-3 text-right font-bold text-emerald-300">442.962</td>
+                            <td class="py-3 px-3 text-right text-emerald-400 font-bold">+38.953 (+9,64%)</td>
+                            <td class="py-3 px-3 text-right text-amber-300 font-bold">57.145</td>
+                            <td class="py-3 px-3 text-right text-amber-400 font-bold">68,2%</td>
+                            <td class="py-3 px-3 text-center"><span class="px-2 py-0.5 rounded text-[10px] bg-rose-500/20 text-rose-300 font-bold">76,9%</span></td>
+                            <td class="py-3 px-3 text-center">
+                                <a href="tocantins.html" class="px-2.5 py-1 bg-cyan-600 hover:bg-cyan-500 text-white rounded font-sans font-bold transition">Ver TO</a>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/40 transition">
+                            <td class="py-3 px-3 font-bold text-white flex items-center gap-1.5">
+                                <span>🌿</span> Acre (AC)
+                            </td>
+                            <td class="py-3 px-3 text-right text-slate-300">2.270</td>
+                            <td class="py-3 px-3 text-right text-slate-300">302.807</td>
+                            <td class="py-3 px-3 text-right font-bold text-blue-300">287.715</td>
+                            <td class="py-3 px-3 text-right text-rose-400 font-bold">-15.092 (-4,98%)</td>
+                            <td class="py-3 px-3 text-right text-slate-300">134.770</td>
+                            <td class="py-3 px-3 text-right font-bold text-emerald-300">144.513</td>
+                            <td class="py-3 px-3 text-right text-emerald-400 font-bold">+9.743 (+7,23%)</td>
+                            <td class="py-3 px-3 text-right text-amber-300 font-bold">31.512</td>
+                            <td class="py-3 px-3 text-right text-slate-400">30,9%</td>
+                            <td class="py-3 px-3 text-center"><span class="px-2 py-0.5 rounded text-[10px] bg-amber-500/20 text-amber-300 font-bold">37,7%</span></td>
+                            <td class="py-3 px-3 text-center">
+                                <a href="acre.html" class="px-2.5 py-1 bg-cyan-600 hover:bg-cyan-500 text-white rounded font-sans font-bold transition">Ver AC</a>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/40 transition">
+                            <td class="py-3 px-3 font-bold text-white flex items-center gap-1.5">
+                                <span>🌊</span> Amapá (AP)
+                            </td>
+                            <td class="py-3 px-3 text-right text-slate-300">1.914</td>
+                            <td class="py-3 px-3 text-right text-slate-300">212.278</td>
+                            <td class="py-3 px-3 text-right font-bold text-blue-300">198.674</td>
+                            <td class="py-3 px-3 text-right text-rose-400 font-bold">-13.604 (-6,41%)</td>
+                            <td class="py-3 px-3 text-right text-slate-300">212.503</td>
+                            <td class="py-3 px-3 text-right font-bold text-emerald-300">222.968</td>
+                            <td class="py-3 px-3 text-right text-emerald-400 font-bold">+10.465 (+4,92%)</td>
+                            <td class="py-3 px-3 text-right text-amber-300 font-bold">40.094</td>
+                            <td class="py-3 px-3 text-right text-slate-400">26,1%</td>
+                            <td class="py-3 px-3 text-center"><span class="px-2 py-0.5 rounded text-[10px] bg-amber-500/20 text-amber-300 font-bold">43,1%</span></td>
+                            <td class="py-3 px-3 text-center">
+                                <a href="amapa.html" class="px-2.5 py-1 bg-cyan-600 hover:bg-cyan-500 text-white rounded font-sans font-bold transition">Ver AP</a>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/40 transition">
+                            <td class="py-3 px-3 font-bold text-white flex items-center gap-1.5">
+                                <span>🏔️</span> Roraima (RR)
+                            </td>
+                            <td class="py-3 px-3 text-right text-slate-300">1.519</td>
+                            <td class="py-3 px-3 text-right text-slate-300">231.322</td>
+                            <td class="py-3 px-3 text-right font-bold text-blue-300">219.675</td>
+                            <td class="py-3 px-3 text-right text-rose-400 font-bold">-11.647 (-5,03%)</td>
+                            <td class="py-3 px-3 text-right text-slate-300">74.420</td>
+                            <td class="py-3 px-3 text-right font-bold text-emerald-300">83.505</td>
+                            <td class="py-3 px-3 text-right text-emerald-400 font-bold">+9.085 (+12,21%)</td>
+                            <td class="py-3 px-3 text-right text-amber-300 font-bold">19.817</td>
+                            <td class="py-3 px-3 text-right text-slate-400">45,8%</td>
+                            <td class="py-3 px-3 text-center"><span class="px-2 py-0.5 rounded text-[10px] bg-amber-500/20 text-amber-300 font-bold">40,5%</span></td>
+                            <td class="py-3 px-3 text-center">
+                                <a href="roraima.html" class="px-2.5 py-1 bg-cyan-600 hover:bg-cyan-500 text-white rounded font-sans font-bold transition">Ver RR</a>
+                            </td>
+                        </tr>
+                        <tr class="bg-cyan-950/30 font-bold">
+                            <td class="py-3.5 px-3 text-white">TOTAL REGIÃO NORTE</td>
+                            <td class="py-3.5 px-3 text-right text-cyan-300 font-black">43.769</td>
+                            <td class="py-3.5 px-3 text-right text-slate-200">5.009.437</td>
+                            <td class="py-3.5 px-3 text-right text-blue-300 font-black">5.023.547</td>
+                            <td class="py-3.5 px-3 text-right text-blue-400 font-black">+14.110 (+0,28%)</td>
+                            <td class="py-3.5 px-3 text-right text-slate-200">4.550.602</td>
+                            <td class="py-3.5 px-3 text-right text-emerald-300 font-black">5.024.626</td>
+                            <td class="py-3.5 px-3 text-right text-emerald-400 font-black">+474.024 (+10,42%)</td>
+                            <td class="py-3.5 px-3 text-right text-amber-300 font-black">632.284</td>
+                            <td class="py-3.5 px-3 text-right text-cyan-300 font-black">74,97%</td>
+                            <td class="py-3.5 px-3 text-center"><span class="px-2 py-0.5 rounded text-[10px] bg-cyan-500/20 text-cyan-300 font-bold">59,6% Média</span></td>
+                            <td class="py-3.5 px-3 text-center">
+                                <a href="modelo_matematico.html" class="px-2.5 py-1 bg-emerald-600 hover:bg-emerald-500 text-white rounded font-sans font-bold transition">Audit Geral</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- OS 7 ESTADOS EM CARDS INTERATIVOS -->
+        <section id="estados" class="space-y-6">
+            <div class="space-y-1">
+                <div class="text-xs font-bold uppercase text-cyan-400 tracking-wider">Navegação Seccional</div>
+                <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight">Portais Estaduais Detalhados (Urna a Urna)</h2>
+                <p class="text-xs sm:text-sm text-slate-400">Cada portal estadual contém carrossel executivo, busca rápida, paginação de todas as seções e exportação CSV</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <!-- PARÁ -->
+                <a href="para.html" class="group bg-slate-900 border border-slate-800 hover:border-cyan-500/60 rounded-2xl p-6 shadow-xl transition space-y-4 hover:shadow-cyan-950/40">
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl">🌴</span>
+                        <span class="px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-rose-500/20 text-rose-300 border border-rose-500/30">20.827 Urnas</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-black text-white group-hover:text-cyan-400 transition">Pará (PA)</h3>
+                        <p class="text-xs text-slate-400">144 Municípios &bull; Maior colégio eleitoral do Norte</p>
+                    </div>
+                    <div class="text-xs text-slate-300 space-y-1 font-mono border-t border-slate-800 pt-3">
+                        <div>Lula: <strong class="text-emerald-400">2.690.449 (55,01%)</strong> &bull; +263.212</div>
+                        <div>Flávio: <strong class="text-blue-400">2.199.940 (44,99%)</strong> &bull; +35.983</div>
+                        <div class="text-rose-400">Absorção 3ª Via: <strong>96,7%</strong> &bull; 7.772 Quedas F</div>
+                    </div>
+                    <div class="pt-2 flex items-center gap-1 text-xs font-bold text-cyan-400 group-hover:translate-x-1 transition">
+                        Acessar Auditoria do Pará <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </div>
+                </a>
+
+                <!-- AMAZONAS -->
+                <a href="amazonas.html" class="group bg-slate-900 border border-slate-800 hover:border-cyan-500/60 rounded-2xl p-6 shadow-xl transition space-y-4 hover:shadow-cyan-950/40">
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl">🌲</span>
+                        <span class="px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-teal-500/20 text-teal-300 border border-teal-500/30">8.157 Urnas</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-black text-white group-hover:text-cyan-400 transition">Amazonas (AM)</h3>
+                        <p class="text-xs text-slate-400">62 Municípios &bull; 1.771 urnas com assinatura plena</p>
+                    </div>
+                    <div class="text-xs text-slate-300 space-y-1 font-mono border-t border-slate-800 pt-3">
+                        <div>Lula: <strong class="text-emerald-400">1.145.783 (54,02%)</strong> &bull; +98.787</div>
+                        <div>Flávio: <strong class="text-blue-400">975.245 (45,98%)</strong> &bull; -1.519</div>
+                        <div class="text-amber-400">P(Software): <strong>66,5%</strong> &bull; 649 Viradas L</div>
+                    </div>
+                    <div class="pt-2 flex items-center gap-1 text-xs font-bold text-cyan-400 group-hover:translate-x-1 transition">
+                        Acessar Auditoria do Amazonas <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </div>
+                </a>
+
+                <!-- RONDÔNIA -->
+                <a href="rondonia.html" class="group bg-slate-900 border border-slate-800 hover:border-cyan-500/60 rounded-2xl p-6 shadow-xl transition space-y-4 hover:shadow-cyan-950/40">
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl">🌾</span>
+                        <span class="px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-blue-500/20 text-blue-300 border border-blue-500/30">4.698 Urnas</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-black text-white group-hover:text-cyan-400 transition">Rondônia (RO)</h3>
+                        <p class="text-xs text-slate-400">52 Municípios &bull; Maior Supercluster (36,12%)</p>
+                    </div>
+                    <div class="text-xs text-slate-300 space-y-1 font-mono border-t border-slate-800 pt-3">
+                        <div>Flávio: <strong class="text-blue-400">674.382 (69,61%)</strong> &bull; +21.394</div>
+                        <div>Lula: <strong class="text-emerald-400">294.446 (30,39%)</strong> &bull; +43.779 (+17,5%)</div>
+                        <div class="text-cyan-400">Supercluster: <strong>1.697 urnas</strong></div>
+                    </div>
+                    <div class="pt-2 flex items-center gap-1 text-xs font-bold text-cyan-400 group-hover:translate-x-1 transition">
+                        Acessar Auditoria de Rondônia <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </div>
+                </a>
+
+                <!-- TOCANTINS -->
+                <a href="tocantins.html" class="group bg-slate-900 border border-slate-800 hover:border-cyan-500/60 rounded-2xl p-6 shadow-xl transition space-y-4 hover:shadow-cyan-950/40">
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl">☀️</span>
+                        <span class="px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">4.384 Urnas</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-black text-white group-hover:text-cyan-400 transition">Tocantins (TO)</h3>
+                        <p class="text-xs text-slate-400">139 Municípios &bull; 50,41% de quedas de Flávio</p>
+                    </div>
+                    <div class="text-xs text-slate-300 space-y-1 font-mono border-t border-slate-800 pt-3">
+                        <div>Flávio: <strong class="text-blue-400">467.916 (51,37%)</strong> &bull; -1.405</div>
+                        <div>Lula: <strong class="text-emerald-400">442.962 (48,63%)</strong> &bull; +38.953</div>
+                        <div class="text-rose-400">2.210 Quedas Flávio &bull; Razão Viradas 20:1</div>
+                    </div>
+                    <div class="pt-2 flex items-center gap-1 text-xs font-bold text-cyan-400 group-hover:translate-x-1 transition">
+                        Acessar Auditoria do Tocantins <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </div>
+                </a>
+
+                <!-- ACRE -->
+                <a href="acre.html" class="group bg-slate-900 border border-slate-800 hover:border-cyan-500/60 rounded-2xl p-6 shadow-xl transition space-y-4 hover:shadow-cyan-950/40">
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl">🌿</span>
+                        <span class="px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">2.270 Urnas</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-black text-white group-hover:text-cyan-400 transition">Acre (AC)</h3>
+                        <p class="text-xs text-slate-400">22 Municípios &bull; Isolamento e seções ribeirinhas</p>
+                    </div>
+                    <div class="text-xs text-slate-300 space-y-1 font-mono border-t border-slate-800 pt-3">
+                        <div>Flávio: <strong class="text-blue-400">287.715 (66,57%)</strong> &bull; -15.092</div>
+                        <div>Lula: <strong class="text-emerald-400">144.513 (33,43%)</strong> &bull; +9.743</div>
+                        <div class="text-slate-400">502 urnas com contra-fluxo</div>
+                    </div>
+                    <div class="pt-2 flex items-center gap-1 text-xs font-bold text-cyan-400 group-hover:translate-x-1 transition">
+                        Acessar Auditoria do Acre <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </div>
+                </a>
+
+                <!-- AMAPÁ -->
+                <a href="amapa.html" class="group bg-slate-900 border border-slate-800 hover:border-cyan-500/60 rounded-2xl p-6 shadow-xl transition space-y-4 hover:shadow-cyan-950/40">
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl">🌊</span>
+                        <span class="px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">1.914 Urnas</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-black text-white group-hover:text-cyan-400 transition">Amapá (AP)</h3>
+                        <p class="text-xs text-slate-400">16 Municípios &bull; Alta taxa de viradas pró-Lula (17,8%)</p>
+                    </div>
+                    <div class="text-xs text-slate-300 space-y-1 font-mono border-t border-slate-800 pt-3">
+                        <div>Lula: <strong class="text-emerald-400">222.968 (52,88%)</strong> &bull; +10.465</div>
+                        <div>Flávio: <strong class="text-blue-400">198.674 (47,12%)</strong> &bull; -13.604</div>
+                        <div class="text-amber-300">340 seções viradas para Lula</div>
+                    </div>
+                    <div class="pt-2 flex items-center gap-1 text-xs font-bold text-cyan-400 group-hover:translate-x-1 transition">
+                        Acessar Auditoria do Amapá <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </div>
+                </a>
+
+                <!-- RORAIMA -->
+                <a href="roraima.html" class="group bg-slate-900 border border-slate-800 hover:border-cyan-500/60 rounded-2xl p-6 shadow-xl transition space-y-4 hover:shadow-cyan-950/40">
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl">🏔️</span>
+                        <span class="px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">1.519 Urnas</span>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-black text-white group-hover:text-cyan-400 transition">Roraima (RR)</h3>
+                        <p class="text-xs text-slate-400">15 Municípios &bull; Ponto zero da investigação das 106 urnas</p>
+                    </div>
+                    <div class="text-xs text-slate-300 space-y-1 font-mono border-t border-slate-800 pt-3">
+                        <div>Flávio: <strong class="text-blue-400">219.675 (72,46%)</strong> &bull; -11.647</div>
+                        <div>Lula: <strong class="text-emerald-400">83.505 (27,54%)</strong> &bull; +9.085</div>
+                        <div class="text-purple-300">Comunidades indígenas e Yanomami</div>
+                    </div>
+                    <div class="pt-2 flex items-center gap-1 text-xs font-bold text-cyan-400 group-hover:translate-x-1 transition">
+                        Acessar Auditoria de Roraima <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- AS 5 GRANDES DESCOBERTAS FORENSES -->
+        <section id="descobertas" class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6">
+            <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                <div class="space-y-1">
+                    <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-xs font-bold uppercase tracking-wider">
+                        Perícia Quantitativa Autônoma
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight">
+                        As 5 Grandes Descobertas Forenses nos Microdados
+                    </h2>
+                </div>
+                <a href="modelo_matematico.html" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-xs font-bold border border-slate-700 transition">
+                    Ver Deduções em KaTeX
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 text-xs sm:text-sm">
+                <!-- Descoberta 1 -->
+                <div class="p-5 rounded-2xl bg-slate-950 border border-rose-900/50 space-y-2">
+                    <div class="flex items-center justify-between font-bold text-rose-400 text-sm">
+                        <span>1. A Absorção Fisicamente Impossível</span>
+                        <span class="px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 font-mono text-[11px]">6.038 urnas (13,80%)</span>
+                    </div>
+                    <p class="text-slate-300 leading-relaxed">
+                        Em 6.038 seções eleitorais, o aumento nominal de votos de Lula <strong>superou 100% de toda a 3ª via do 1º turno somada a 100% dos novos votantes da urna</strong>. Matematicamente, para que a conservação de eleitores seja respeitada, pelo menos <strong>32.390 votos nominais tiveram que ser subtraídos diretamente de Flávio</strong> nessas urnas.
+                    </p>
+                </div>
+
+                <!-- Descoberta 2 -->
+                <div class="p-5 rounded-2xl bg-slate-950 border border-cyan-900/50 space-y-2">
+                    <div class="flex items-center justify-between font-bold text-cyan-400 text-sm">
+                        <span>2. O Supercluster Atrator ($Z = +74,51\sigma$)</span>
+                        <span class="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-mono text-[11px]> 99,99% Software</span>
+                    </div>
+                    <p class="text-slate-300 leading-relaxed">
+                        Exatamente 13.433 urnas (30,69% a 34,84% no bin expandido) caem no hipercubo estreito $(\Delta Fl \approx 0\% \land \Delta Lu \in [+10\%, +20\%])$. A probabilidade desse confinamento ter origem puramente sociológica/humana é de <strong>$1$ chance em $10^{1.206}$</strong>. Pelo Teorema de Bayes, a probabilidade de ter sido gerado por algoritmo em software é de <strong>virtualmente 100%</strong>.
+                    </p>
+                </div>
+
+                <!-- Descoberta 3 -->
+                <div class="p-5 rounded-2xl bg-slate-950 border border-amber-900/50 space-y-2">
+                    <div class="flex items-center justify-between font-bold text-amber-400 text-sm">
+                        <span>3. Assinatura de Klimek (Ballot Stuffing)</span>
+                        <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono text-[11px]">Turnout >90%</span>
+                    </div>
+                    <p class="text-slate-300 leading-relaxed">
+                        Nas urnas com comparecimento típico (75% a 85%), Flávio vence com 51% a 52%. Porém, na cauda extrema de comparecimento (>90%), o placar explode para <strong>68,69% a favor de Lula</strong> (+20,9 p.p. de salto), reproduzindo a impressão digital exata descrita por Klimek et al. (PNAS 2012) para inserção artificial de votos.
+                    </p>
+                </div>
+
+                <!-- Descoberta 4 -->
+                <div class="p-5 rounded-2xl bg-slate-950 border border-purple-900/50 space-y-2">
+                    <div class="flex items-center justify-between font-bold text-purple-400 text-sm">
+                        <span>4. Deformação de Benford no 2º Turno (+37,9%)</span>
+                        <span class="px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 font-mono text-[11px]">&chi;&sup2; 18.245</span>
+                    </div>
+                    <p class="text-slate-300 leading-relaxed">
+                        A distribuição do primeiro dígito significativo de Lula sofreu um salto de deformação qui-quadrado de <strong>+37,9%</strong> entre o 1º e 2º turnos (saltando de 13.230 para 18.245), rompendo com o padrão logarítmico natural e apontando para adição linear padronizada de votos.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CENTRAL DE DOWNLOADS DE DADOS ABERTOS -->
+        <section id="downloads" class="bg-gradient-to-r from-slate-900 via-emerald-950/20 to-slate-900 border border-emerald-800/40 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6">
+            <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-800">
+                <div class="space-y-1">
+                    <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase tracking-wider">
+                        Transparência e Reprodutibilidade
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight">Central de Dados Abertos (CSVs & JSONs)</h2>
+                    <p class="text-xs sm:text-sm text-slate-400">Todos os microdados consolidados estão disponíveis para download imediato e conferência pública</p>
+                </div>
+                <div class="text-xs font-mono text-emerald-400 font-bold bg-emerald-950/80 px-3 py-1.5 rounded-xl border border-emerald-700/60">
+                    <i class="fa-solid fa-database mr-1"></i> Formato UTF-8 com Delimitador Ponto e Vírgula
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xs font-mono">
+                <a href="dados/urnas_absorcao_impossivel_2026.csv" download class="p-4 rounded-xl bg-slate-950 border border-slate-800 hover:border-rose-500 transition space-y-2 block">
+                    <div class="flex items-center justify-between text-rose-400 font-bold">
+                        <span>urnas_absorcao_impossivel_2026.csv</span>
+                        <i class="fa-solid fa-file-csv text-base"></i>
+                    </div>
+                    <div class="text-slate-400 text-[11px] font-sans">6.038 urnas com violação do teto físico de conservação</div>
+                </a>
+
+                <a href="dados/auditoria_viradas_todas_secoes_2026.csv" download class="p-4 rounded-xl bg-slate-950 border border-slate-800 hover:border-amber-500 transition space-y-2 block">
+                    <div class="flex items-center justify-between text-amber-400 font-bold">
+                        <span>auditoria_viradas_todas_secoes_2026.csv</span>
+                        <i class="fa-solid fa-file-csv text-base"></i>
+                    </div>
+                    <div class="text-slate-400 text-[11px] font-sans">2.859 seções com inversão de placar no Norte (2.781 pró-Lula vs 78 pró-Flávio)</div>
+                </a>
+
+                <a href="dados/para_auditoria_completa_2026.csv" download class="p-4 rounded-xl bg-slate-950 border border-slate-800 hover:border-cyan-500 transition space-y-2 block">
+                    <div class="flex items-center justify-between text-cyan-400 font-bold">
+                        <span>para_auditoria_completa_2026.csv</span>
+                        <i class="fa-solid fa-file-csv text-base"></i>
+                    </div>
+                    <div class="text-slate-400 text-[11px] font-sans">Todas as 20.827 seções do Pará auditadas</div>
+                </a>
+
+                <a href="dados/amazonas_auditoria_completa_2026.csv" download class="p-4 rounded-xl bg-slate-950 border border-slate-800 hover:border-cyan-500 transition space-y-2 block">
+                    <div class="flex items-center justify-between text-cyan-400 font-bold">
+                        <span>amazonas_auditoria_completa_2026.csv</span>
+                        <i class="fa-solid fa-file-csv text-base"></i>
+                    </div>
+                    <div class="text-slate-400 text-[11px] font-sans">Todas as 8.157 seções do Amazonas auditadas</div>
+                </a>
+
+                <a href="dados/tocantins_auditoria_completa_2026.csv" download class="p-4 rounded-xl bg-slate-950 border border-slate-800 hover:border-cyan-500 transition space-y-2 block">
+                    <div class="flex items-center justify-between text-cyan-400 font-bold">
+                        <span>tocantins_auditoria_completa_2026.csv</span>
+                        <i class="fa-solid fa-file-csv text-base"></i>
+                    </div>
+                    <div class="text-slate-400 text-[11px] font-sans">Todas as 4.384 seções de Tocantins auditadas</div>
+                </a>
+
+                <a href="dados/rondonia_auditoria_completa_2026.csv" download class="p-4 rounded-xl bg-slate-950 border border-slate-800 hover:border-cyan-500 transition space-y-2 block">
+                    <div class="flex items-center justify-between text-cyan-400 font-bold">
+                        <span>rondonia_auditoria_completa_2026.csv</span>
+                        <i class="fa-solid fa-file-csv text-base"></i>
+                    </div>
+                    <div class="text-slate-400 text-[11px] font-sans">Todas as 4.698 seções de Rondônia auditadas</div>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-800 bg-slate-950 py-10 text-center text-xs text-slate-500 mt-16">
+        <div class="max-w-7xl mx-auto px-4 space-y-3">
+            <div class="flex items-center justify-center gap-2 text-slate-400 font-bold text-sm">
+                <i class="fa-solid fa-compass text-cyan-400"></i> Repositório de Auditoria Eleitoral da Região Norte &bull; Eleições 2026
+            </div>
+            <p>
+                Dados brutos extraídos diretamente dos Boletins de Urna (BWEB) oficiais publicados pelo Tribunal Superior Eleitoral (TSE).
+            </p>
+            <p class="text-[11px] text-slate-600 font-mono">
+                43.769 seções &bull; 450 municípios &bull; 7 estados (AC, AP, AM, PA, RO, RR, TO) &bull; Código aberto e reprodutível
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

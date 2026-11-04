@@ -99,8 +99,11 @@
             <button id="btnTab3" onclick="switchTab('tab3')" class="tab-btn px-4 py-2.5 rounded-xl border border-slate-800 bg-slate-900 text-slate-400 hover:text-white transition flex items-center gap-2 shadow whitespace-nowrap">
                 <i class="fa-solid fa-rotate text-emerald-400"></i> Aba 3: Auditoria das Viradas & Swings
             </button>
-            <button id="btnTab4" onclick="switchTab('tab4')" class="tab-btn px-4 py-2.5 rounded-xl border border-slate-800 bg-slate-900 text-slate-400 font-bold text-xs sm:text-sm flex items-center gap-2 hover:bg-slate-800 transition">
+            <button id="btnTab4" onclick="switchTab('tab4')" class="tab-btn px-4 py-2.5 rounded-xl border border-slate-800 bg-slate-900 text-slate-400 font-bold text-xs sm:text-sm flex items-center gap-2 hover:bg-slate-800 transition whitespace-nowrap">
                 <i class="fa-solid fa-microscope text-cyan-400"></i> Aba 4: Descobertas Forenses Autônomas
+            </button>
+            <button id="btnTab5" onclick="switchTab('tab5')" class="tab-btn px-4 py-2.5 rounded-xl border border-slate-800 bg-slate-900 text-slate-400 font-bold text-xs sm:text-sm flex items-center gap-2 hover:bg-slate-800 transition whitespace-nowrap">
+                <i class="fa-solid fa-list-check text-amber-400"></i> Aba 5: As 15.161 Urnas (34,64%)
             </button>
         </div>
 
@@ -2800,12 +2803,12 @@
             }
         }
     </script>
-</body>
-</html>
+
         <!-- #################################################### -->
         <!-- CONTEÚDO DA ABA 4: DESCOBERTAS FORENSES AUTÔNOMAS    -->
         <!-- #################################################### -->
-        <div id="contentTab4" class="space-y-8 hidden">
+        
+<div id="contentTab4" class="space-y-8 hidden">
 
             <!-- Contexto Hero da Aba 4 -->
             <section class="bg-gradient-to-r from-slate-900 via-cyan-950/40 to-slate-900 border border-cyan-800/40 rounded-2xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
@@ -3215,3 +3218,391 @@
         </div>
 
 
+
+
+        <!-- #################################################### -->
+        <!-- CONTEÚDO DA ABA 5: AS 15.161 URNAS DO SUPERCLUSTER   -->
+        <!-- #################################################### -->
+        <div id="contentTab5" class="space-y-8 hidden">
+
+            <!-- Contexto Hero da Aba 5 -->
+            <section class="bg-gradient-to-r from-slate-900 via-amber-950/30 to-slate-900 border border-amber-800/40 rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
+                <div class="max-w-4xl relative z-10 space-y-3">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-wider border border-amber-500/40">
+                        <i class="fa-solid fa-list-check"></i> Microdados Oficiais TSE &bull; 100% Auditados
+                    </div>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight">
+                        As 15.161 Urnas do Supercluster (34,64% da Região Norte)
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                        Navegue, pesquise e audite cada uma das <strong>15.161 seções eleitorais</strong> espalhadas por <strong>406 dos 450 municípios</strong> do Norte onde ocorreu a anomalia matemática: <strong>Flávio estagnado em 0% (faixa de -5% a +5%)</strong> enquanto <strong>Lula salta de +10% a +20%</strong>.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 4 KPI CARDS DA ABA 5 -->
+            <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 font-mono">
+                <div class="bg-slate-900/90 border border-amber-500/40 rounded-2xl p-5 shadow-xl">
+                    <div class="text-[11px] font-bold text-amber-400 uppercase tracking-wider mb-1 flex items-center justify-between">
+                        <span>Total no Padrão</span>
+                        <i class="fa-solid fa-cubes text-amber-400"></i>
+                    </div>
+                    <div class="text-3xl sm:text-4xl font-black text-white">15.161</div>
+                    <div class="text-xs text-amber-300 font-bold mt-1">34,64% das Urnas do Norte</div>
+                    <div class="text-[11px] text-slate-400 mt-2 border-t border-slate-800 pt-2 font-sans">
+                        Exatamente <strong>1 a cada 2,89 urnas</strong>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900/90 border border-cyan-500/40 rounded-2xl p-5 shadow-xl">
+                    <div class="text-[11px] font-bold text-cyan-400 uppercase tracking-wider mb-1 flex items-center justify-between">
+                        <span>Cidades Atingidas</span>
+                        <i class="fa-solid fa-city text-cyan-400"></i>
+                    </div>
+                    <div class="text-3xl sm:text-4xl font-black text-white">406 de 450</div>
+                    <div class="text-xs text-cyan-300 font-bold mt-1">90,2% dos Municípios</div>
+                    <div class="text-[11px] text-slate-400 mt-2 border-t border-slate-800 pt-2 font-sans">
+                        Em 9 de cada 10 cidades do Norte
+                    </div>
+                </div>
+
+                <div class="bg-slate-900/90 border border-orange-500/40 rounded-2xl p-5 shadow-xl">
+                    <div class="text-[11px] font-bold text-orange-400 uppercase tracking-wider mb-1 flex items-center justify-between">
+                        <span>Cluster 1 (+10% Lula)</span>
+                        <i class="fa-solid fa-layer-group text-orange-400"></i>
+                    </div>
+                    <div class="text-3xl sm:text-4xl font-black text-white">7.922</div>
+                    <div class="text-xs text-orange-300 font-bold mt-1">18,10% das Urnas (405 Cidades)</div>
+                    <div class="text-[11px] text-slate-400 mt-2 border-t border-slate-800 pt-2 font-sans">
+                        Flávio médio: <strong>+0,38%</strong> | Lula médio: <strong>+10,22%</strong>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900/90 border border-rose-500/40 rounded-2xl p-5 shadow-xl">
+                    <div class="text-[11px] font-bold text-rose-400 uppercase tracking-wider mb-1 flex items-center justify-between">
+                        <span>Cluster 2 (+20% Lula)</span>
+                        <i class="fa-solid fa-bolt text-rose-400"></i>
+                    </div>
+                    <div class="text-3xl sm:text-4xl font-black text-white">7.239</div>
+                    <div class="text-xs text-rose-300 font-bold mt-1">16,54% das Urnas (280 Cidades)</div>
+                    <div class="text-[11px] text-slate-400 mt-2 border-t border-slate-800 pt-2 font-sans">
+                        Flávio médio: <strong>+0,78%</strong> | Lula médio: <strong>+19,54%</strong>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BARRA DE CONTROLE, BUSCA E FILTROS -->
+            <section class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-2xl space-y-4">
+                <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-800">
+                    <div>
+                        <h3 class="font-bold text-white text-lg flex items-center gap-2">
+                            <i class="fa-solid fa-filter text-amber-400"></i> Filtros e Busca Rápida
+                        </h3>
+                        <p class="text-xs text-slate-400">Filtre por Estado, Cluster, Placar de Flávio ou digite o nome do município</p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <a href="dados/urnas_supercluster_15161_2026.csv" download class="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold transition flex items-center gap-2 shadow-lg shadow-emerald-600/30">
+                            <i class="fa-solid fa-file-csv text-sm"></i> Baixar CSV (15.161 Urnas)
+                        </a>
+                        <a href="grafico_visual_2026.html" class="px-3.5 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs font-bold transition flex items-center gap-2 shadow-lg shadow-indigo-600/30">
+                            <i class="fa-solid fa-chart-pie text-sm"></i> Ver Gráfico Visual
+                        </a>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+                    <!-- Busca Texto -->
+                    <div class="space-y-1">
+                        <label class="font-bold text-slate-300">Buscar Município / Seção:</label>
+                        <div class="relative">
+                            <input type="text" id="superSearchInput" oninput="onSuperFilterChange()" placeholder="Ex: Manaus, Pimenta Bueno, 24..." class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 font-mono text-xs">
+                            <i class="fa-solid fa-search absolute right-3 top-2.5 text-slate-500 text-xs"></i>
+                        </div>
+                    </div>
+
+                    <!-- Filtro Estado -->
+                    <div class="space-y-1">
+                        <label class="font-bold text-slate-300">Filtrar por Estado (UF):</label>
+                        <select id="superUfSelect" onchange="onSuperFilterChange()" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-amber-500 font-mono text-xs">
+                            <option value="ALL">Todos os 7 Estados (15.161)</option>
+                            <option value="RO">Rondônia - RO (1.848)</option>
+                            <option value="TO">Tocantins - TO (1.759)</option>
+                            <option value="PA">Pará - PA (7.276)</option>
+                            <option value="AM">Amazonas - AM (2.728)</option>
+                            <option value="AP">Amapá - AP (580)</option>
+                            <option value="RR">Roraima - RR (410)</option>
+                            <option value="AC">Acre - AC (560)</option>
+                        </select>
+                    </div>
+
+                    <!-- Filtro Cluster -->
+                    <div class="space-y-1">
+                        <label class="font-bold text-slate-300">Filtrar por Cluster:</label>
+                        <select id="superClusterSelect" onchange="onSuperFilterChange()" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-amber-500 font-mono text-xs">
+                            <option value="ALL">Ambos os Clusters (15.161)</option>
+                            <option value="1">Cluster 1: Flávio ~0% e Lula ~+10% (7.922)</option>
+                            <option value="2">Cluster 2: Flávio ~0% e Lula ~+20% (7.239)</option>
+                            <option value="ZERO">Flávio com EXATOS 0 Votos de Variação (1.459)</option>
+                        </select>
+                    </div>
+
+                    <!-- Linhas por Página -->
+                    <div class="space-y-1">
+                        <label class="font-bold text-slate-300">Urnas por Página:</label>
+                        <select id="superPageSize" onchange="onSuperPageSizeChange()" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-white focus:outline-none focus:border-amber-500 font-mono text-xs">
+                            <option value="50">50 urnas por página</option>
+                            <option value="100" selected>100 urnas por página</option>
+                            <option value="250">250 urnas por página</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between text-xs text-slate-400 font-mono pt-1">
+                    <div>
+                        Encontradas: <strong id="superTotalCount" class="text-amber-300 font-bold">15.161</strong> urnas (<span id="superTotalPct">34,64%</span> do Norte)
+                    </div>
+                    <div id="superPageInfo" class="text-slate-300">
+                        Página 1 de 152
+                    </div>
+                </div>
+            </section>
+
+            <!-- TABELA SECCIONIAL DAS 15.161 URNAS -->
+            <section class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-2xl space-y-4">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-xs text-left">
+                        <thead class="bg-slate-950 text-slate-400 uppercase font-mono text-[10px] border-b border-slate-800">
+                            <tr>
+                                <th class="py-2.5 px-2 text-center">UF</th>
+                                <th class="py-2.5 px-3">Município</th>
+                                <th class="py-2.5 px-2 text-center">Zona</th>
+                                <th class="py-2.5 px-2 text-center">Seção</th>
+                                <th class="py-2.5 px-2 text-right">Flávio 1T</th>
+                                <th class="py-2.5 px-2 text-right">Flávio 2T</th>
+                                <th class="py-2.5 px-2 text-right">&Delta; Flávio</th>
+                                <th class="py-2.5 px-2 text-right">Lula 1T</th>
+                                <th class="py-2.5 px-2 text-right">Lula 2T</th>
+                                <th class="py-2.5 px-2 text-right">&Delta; Lula</th>
+                                <th class="py-2.5 px-2 text-right">3ª Via</th>
+                                <th class="py-2.5 px-2 text-center">Cluster</th>
+                            </tr>
+                        </thead>
+                        <tbody id="superclusterTableBody" class="divide-y divide-slate-800 font-mono text-slate-300">
+                            <tr><td colspan="12" class="py-8 text-center text-slate-500">Carregando as 15.161 urnas...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- CONTROLES DE PAGINAÇÃO -->
+                <div class="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-800 text-xs">
+                    <div class="flex items-center gap-1 font-mono text-slate-400">
+                        <span>Ir para página:</span>
+                        <input type="number" id="superJumpPageInput" min="1" max="152" value="1" class="w-16 bg-slate-950 border border-slate-700 rounded px-2 py-1 text-white text-center">
+                        <button onclick="superJumpPage()" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-white rounded font-bold">Ir</button>
+                    </div>
+
+                    <div class="flex items-center gap-2">
+                        <button onclick="superPrevPage()" id="btnSuperPrev" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-bold transition flex items-center gap-1">
+                            <i class="fa-solid fa-chevron-left"></i> Anterior
+                        </button>
+                        <span id="superPaginationFooter" class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 font-mono font-bold text-amber-300">
+                            Página 1 / 152
+                        </span>
+                        <button onclick="superNextPage()" id="btnSuperNext" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-bold transition flex items-center gap-1">
+                            Próxima <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- Dataset das 15.161 Urnas do Supercluster -->
+    <script src="dados/supercluster_data.js"></script>
+    <script>
+        // Lógica de Paginação e Filtragem das 15.161 Urnas da Aba 5
+        let superAllData = [];
+        let superFilteredData = [];
+        let superCurrentPage = 1;
+        let superPageSize = 100;
+
+        function initSuperclusterTable() {
+            if (window.SUPERCLUSTER_URNAS && Array.isArray(window.SUPERCLUSTER_URNAS)) {
+                superAllData = window.SUPERCLUSTER_URNAS;
+                superFilteredData = superAllData;
+                renderSuperclusterPage();
+            } else {
+                console.warn("supercluster_data.js ainda não disponível.");
+            }
+        }
+
+        function onSuperFilterChange() {
+            const query = (document.getElementById('superSearchInput').value || '').trim().toUpperCase();
+            const uf = document.getElementById('superUfSelect').value;
+            const clusterFilter = document.getElementById('superClusterSelect').value;
+
+            superFilteredData = superAllData.filter(row => {
+                // row: [uf, mun, zona, secao, fl1, fl2, d_fl, d_fl_pct, lu1, lu2, d_lu, d_lu_pct, terc1, tot1, tot2, clust]
+                if (uf !== 'ALL' && row[0] !== uf) return false;
+
+                if (clusterFilter === '1' && row[15] !== 1) return false;
+                if (clusterFilter === '2' && row[15] !== 2) return false;
+                if (clusterFilter === 'ZERO' && row[6] !== 0) return false;
+
+                if (query) {
+                    const mun = row[1].toUpperCase();
+                    const zona = String(row[2]);
+                    const secao = String(row[3]);
+                    if (!mun.includes(query) && !zona.includes(query) && !secao.includes(query)) {
+                        return false;
+                    }
+                }
+                return true;
+            });
+
+            superCurrentPage = 1;
+            renderSuperclusterPage();
+        }
+
+        function onSuperPageSizeChange() {
+            superPageSize = parseInt(document.getElementById('superPageSize').value) || 100;
+            superCurrentPage = 1;
+            renderSuperclusterPage();
+        }
+
+        function renderSuperclusterPage() {
+            const tbody = document.getElementById('superclusterTableBody');
+            if (!tbody) return;
+
+            const total = superFilteredData.length;
+            const totalNorth = 43769;
+            const totalPages = Math.max(1, Math.ceil(total / superPageSize));
+
+            if (superCurrentPage > totalPages) superCurrentPage = totalPages;
+            if (superCurrentPage < 1) superCurrentPage = 1;
+
+            document.getElementById('superTotalCount').innerText = total.toLocaleString('pt-BR');
+            document.getElementById('superTotalPct').innerText = ((total / totalNorth) * 100).toFixed(2) + '%';
+            document.getElementById('superPageInfo').innerText = `Página ${superCurrentPage} de ${totalPages}`;
+            document.getElementById('superPaginationFooter').innerText = `Página ${superCurrentPage} / ${totalPages}`;
+            document.getElementById('superJumpPageInput').max = totalPages;
+            document.getElementById('superJumpPageInput').value = superCurrentPage;
+
+            document.getElementById('btnSuperPrev').disabled = (superCurrentPage <= 1);
+            document.getElementById('btnSuperNext').disabled = (superCurrentPage >= totalPages);
+
+            const start = (superCurrentPage - 1) * superPageSize;
+            const end = Math.min(start + superPageSize, total);
+            const pageRows = superFilteredData.slice(start, end);
+
+            if (pageRows.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="12" class="py-6 text-center text-slate-500">Nenhuma urna encontrada com os filtros selecionados.</td></tr>';
+                return;
+            }
+
+            let html = '';
+            for (let i = 0; i < pageRows.length; i++) {
+                const r = pageRows[i];
+                // r: [uf, mun, zona, secao, fl1, fl2, d_fl, d_fl_pct, lu1, lu2, d_lu, d_lu_pct, terc1, tot1, tot2, clust]
+                const dFlClass = r[6] === 0 ? 'text-amber-300 font-bold' : (r[6] < 0 ? 'text-rose-400' : 'text-blue-300');
+                const clusterBadge = r[15] === 1 
+                    ? '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">Cluster 1 (+10%)</span>'
+                    : '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-orange-500/20 text-orange-300 border border-orange-500/30">Cluster 2 (+20%)</span>';
+
+                html += `<tr class="hover:bg-slate-800/40 border-b border-slate-800/70 transition">
+                    <td class="py-2.5 px-2 text-center font-bold text-cyan-400">${r[0]}</td>
+                    <td class="py-2.5 px-3 font-sans font-medium text-slate-200">${r[1]}</td>
+                    <td class="py-2.5 px-2 text-center text-slate-400">${r[2]}</td>
+                    <td class="py-2.5 px-2 text-center font-bold text-white">${r[3]}</td>
+                    <td class="py-2.5 px-2 text-right text-slate-300">${r[4]}</td>
+                    <td class="py-2.5 px-2 text-right font-bold text-blue-300">${r[5]}</td>
+                    <td class="py-2.5 px-2 text-right ${dFlClass}">${r[6] >= 0 ? '+' : ''}${r[6]} (${r[7] >= 0 ? '+' : ''}${r[7]}%)</td>
+                    <td class="py-2.5 px-2 text-right text-slate-300">${r[8]}</td>
+                    <td class="py-2.5 px-2 text-right font-bold text-emerald-300">${r[9]}</td>
+                    <td class="py-2.5 px-2 text-right text-emerald-400 font-bold">+${r[10]} (+${r[11]}%)</td>
+                    <td class="py-2.5 px-2 text-right text-amber-400">${r[12]}</td>
+                    <td class="py-2.5 px-2 text-center">${clusterBadge}</td>
+                </tr>`;
+            }
+            tbody.innerHTML = html;
+        }
+
+        function superPrevPage() {
+            if (superCurrentPage > 1) {
+                superCurrentPage--;
+                renderSuperclusterPage();
+            }
+        }
+
+        function superNextPage() {
+            const totalPages = Math.ceil(superFilteredData.length / superPageSize);
+            if (superCurrentPage < totalPages) {
+                superCurrentPage++;
+                renderSuperclusterPage();
+            }
+        }
+
+        function superJumpPage() {
+            const val = parseInt(document.getElementById('superJumpPageInput').value);
+            const totalPages = Math.ceil(superFilteredData.length / superPageSize);
+            if (val >= 1 && val <= totalPages) {
+                superCurrentPage = val;
+                renderSuperclusterPage();
+            }
+        }
+
+        // Atualizar switchTab para incluir tab5
+        const origSwitchTab = window.switchTab;
+        window.switchTab = function(tabId) {
+            const tabs = ['tab1', 'tab2', 'tab3', 'tab4', 'tab5'];
+            tabs.forEach(t => {
+                const btn = document.getElementById('btn' + t.charAt(0).toUpperCase() + t.slice(1));
+                const content = document.getElementById('content' + t.charAt(0).toUpperCase() + t.slice(1));
+                if (!btn || !content) return;
+
+                if (t === tabId) {
+                    content.classList.remove('hidden');
+                    btn.classList.add('active', 'bg-blue-600', 'text-white', 'border-blue-500');
+                    btn.classList.remove('bg-slate-900', 'text-slate-400', 'border-slate-800');
+
+                    if (t === 'tab5') {
+                        initSuperclusterTable();
+                    }
+
+                    if (window.renderMathInElement) {
+                        renderMathInElement(content, {
+                            delimiters: [
+                                {left: '$$', right: '$$', display: true},
+                                {left: '$', right: '$', display: false}
+                            ],
+                            throwOnError: false
+                        });
+                    }
+                } else {
+                    content.classList.add('hidden');
+                    btn.classList.remove('active', 'bg-blue-600', 'text-white', 'border-blue-500');
+                    btn.classList.add('bg-slate-900', 'text-slate-400', 'border-slate-800');
+                }
+            });
+        };
+
+        
+        window.addEventListener('DOMContentLoaded', () => {
+            if (window.location.hash === '#aba5' || window.location.hash === '#tab5') {
+                setTimeout(() => switchTab('tab5'), 50);
+            } else if (window.location.hash === '#aba4' || window.location.hash === '#tab4') {
+                setTimeout(() => switchTab('tab4'), 50);
+            }
+        });
+
+        window.addEventListener('DOMContentLoaded', () => {
+            if (window.SUPERCLUSTER_URNAS) {
+                initSuperclusterTable();
+            }
+        });
+    </script>
+
+</body>
+</html>

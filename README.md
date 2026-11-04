@@ -97,13 +97,13 @@ Nas faixas de comparecimento modal típico (75% a 85%), Flávio Bolsonaro lidera
    git add .
    git commit -m "feat: auditoria eleitoral regiao norte 2026 completa"
    git branch -M main
-   git remote add origin https://github.com/gabrielalmeidac3/apuracao2026.git
+   git remote add origin https://github.com/gabrielalmeidaz1/urnas2026.git
    git push -u origin main
    ```
 2. **Ativar o GitHub Pages:**
    * No GitHub, acesse **Settings** &rarr; **Pages**.
    * Em **Branch**, selecione `main` e diretório `/ (root)`.
-   * Clique em **Save**. O portal estará no ar em poucos segundos em `https://gabrielalmeidac3.github.io/apuracao2026/`.
+   * Clique em **Save**. O portal estará no ar em poucos segundos em `https://gabrielalmeidaz1.github.io/urnas2026/`.
 3. **Visualizar Localmente:**
    * Basta dar dois cliques em `index.html` ou usar qualquer servidor local simples:
      ```bash
